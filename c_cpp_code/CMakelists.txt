@@ -1,0 +1,14 @@
+cmake_minimum_required(VERSION 3.10)
+
+# set the project name
+project(cpp_bindings)
+
+include_directories(PUBLIC "include")
+
+
+add_library(cfunctions src/c/functions.c)
+add_library(cppfunctions src/cpp/functions.cpp)
+add_library(inherited_classes src/cpp/inherited_classes.cpp)
+add_library(namespace_simple_class src/cpp/namespace_simple_class.cpp)
+add_library(simple_classes src/cpp/simple_classes.cpp)
+add_library(virtual_classes src/cpp/virtual_classes.cpp)
