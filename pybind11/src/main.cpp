@@ -84,9 +84,11 @@ void init_class_submodule(pybind11::module &m) {
 
     pybind11::class_<Shape, PyShape>(m, "Shape") // <--- trampoline
             .def(pybind11::init<>())
-            .def("area", &Shape::area);
+            .def("area", &Shape::area)
+            .def("is_shape", &Shape::is_shape);
 
     pybind11::class_<Rectangle, Shape>(m, "Rectangle")
+            .def(pybind11::init<>())
             .def(pybind11::init<const Point&, const Point&>());
 
     pybind11::class_<Circle>(m, "Circle")
@@ -97,9 +99,9 @@ void init_class_submodule(pybind11::module &m) {
             .def("area", &Circle::area);
 
     pybind11::class_<space::Planet>(m, "Planet")
-            .def(pybind11::init<const std::string, double>())
-            .def_readwrite("name", &space::Planet::name)
-            .def_readwrite("mass", &space::Planet::mass);
+            .def(pybind11::init<const std::string&, double>())
+            .def("name", &space::Planet::name)
+            .def("mass", &space::Planet::mass);
 }
 
 PYBIND11_MODULE(pybind_example, m) {

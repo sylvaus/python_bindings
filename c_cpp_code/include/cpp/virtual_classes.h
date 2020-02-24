@@ -6,6 +6,7 @@
 class Shape
 {
 public:
+    bool is_shape(); // here to see if function is inherited properly
     virtual double area() const = 0;
     virtual ~Shape() {};
 };
@@ -13,6 +14,7 @@ public:
 class Rectangle: public Shape
 {
 public:
+    Rectangle();
     Rectangle(const Point& top_left, const Point& bottom_right);
 
     double area() const override;

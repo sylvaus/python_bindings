@@ -1,5 +1,5 @@
 import unittest
-from pybind_example.classes import Point, Rectangle, Circle, Planet
+from cython_example.classes import Point, Rectangle, Circle, Planet
 
 
 class ClassesTestCase(unittest.TestCase):

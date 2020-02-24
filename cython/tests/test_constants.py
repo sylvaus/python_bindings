@@ -7,10 +7,10 @@ class AttributesTestCase(unittest.TestCase):
         self.assertAlmostEqual(PI, 3.14)
 
     def test_raw_string(self):
-        self.assertEqual(CONST_RAW_STRING, "Const raw string")
+        self.assertEqual(CONST_RAW_STRING, b"Const raw string")
 
     def test_string(self):
-        self.assertEqual(CONST_STRING, "Const string")
+        self.assertEqual(CONST_STRING, b"Const string")
 
     def test_vector(self):
         self.assertEqual(PRIME_NUMBERS, [2, 3, 5, 7, 11, 13, 17])

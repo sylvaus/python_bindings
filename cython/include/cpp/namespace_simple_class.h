@@ -8,9 +8,12 @@ namespace space
     class Planet
     {
     public:
-        std::string name;
-        double mass;
         Planet(const std::string& name, double mass);
+        std::string name();
+        double mass();
+    private:
+        std::string name_;
+        double mass_;
     };
 }
 

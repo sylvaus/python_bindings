@@ -30,7 +30,9 @@ setup(
         )
         , Extension(
             "cython_example.classes"
-            , ["cython_example/classes.pyx", "src/cpp/simple_classes.cpp"]
+            , ["cython_example/classes.pyx", "src/cpp/simple_classes.cpp"
+                , "src/cpp/virtual_classes.cpp", "src/cpp/namespace_simple_class.cpp"
+               ]
             , include_dirs=["include"]
         )]
         , compiler_directives={"language_level": 3, "embedsignature": True}

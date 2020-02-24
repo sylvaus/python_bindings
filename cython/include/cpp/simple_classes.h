@@ -5,7 +5,8 @@ class Point
 {
 public:
     double x, y;
-
+    Point();
+    Point(double x, double y);
     double norm();
 };
 
