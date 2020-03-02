@@ -100,8 +100,8 @@ void init_class_submodule(pybind11::module &m) {
 
     pybind11::class_<space::Planet>(m, "Planet")
             .def(pybind11::init<const std::string&, double>())
-            .def("name", &space::Planet::name)
-            .def("mass", &space::Planet::mass);
+            .def_property_readonly("name", &space::Planet::name)
+            .def_property_readonly("mass", &space::Planet::mass);
 }
 
 PYBIND11_MODULE(pybind_example, m) {

@@ -1,5 +1,5 @@
 import unittest
-from pybind_example.classes import Point, Rectangle, Circle, Planet
+from swig_example.classes import Point, Rectangle, Circle, Planet
 
 
 class ClassesTestCase(unittest.TestCase):
@@ -29,7 +29,7 @@ class ClassesTestCase(unittest.TestCase):
 
     def test_planet(self):
         p = Planet("mars", 123568.12)
-        self.assertEqual(p.name, "mars")
-        self.assertAlmostEqual(p.mass, 123568.12)
+        self.assertEqual(p.name(), "mars")
+        self.assertAlmostEqual(p.mass(), 123568.12)
 
 

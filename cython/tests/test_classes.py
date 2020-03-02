@@ -22,11 +22,14 @@ class ClassesTestCase(unittest.TestCase):
         c = Circle()
         self.assertEqual(c.area(), 0)
         c = Circle(Point(1.2, 3.5), 12)
+        self.assertAlmostEqual(c.center.x, 1.2)
+        self.assertAlmostEqual(c.center.y, 3.5)
+        self.assertAlmostEqual(c.radius, 12)
         self.assertAlmostEqual(c.area(), 3.14159265359 * 12 * 12)
 
     def test_planet(self):
         p = Planet("mars", 123568.12)
-        self.assertEqual(p.name(), "mars")
-        self.assertAlmostEqual(p.mass(), 123568.12)
+        self.assertEqual(p.name, "mars")
+        self.assertAlmostEqual(p.mass, 123568.12)
 
 
