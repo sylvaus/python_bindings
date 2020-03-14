@@ -1,5 +1,5 @@
 import unittest
-from swig_example.constants import PI, CONST_RAW_STRING, CONST_STRING, PRIME_NUMBERS
+from boost_example.constants import PI, CONST_RAW_STRING, CONST_STRING, PRIME_NUMBERS
 
 
 class AttributesTestCase(unittest.TestCase):
@@ -13,6 +13,4 @@ class AttributesTestCase(unittest.TestCase):
         self.assertEqual(CONST_STRING, "Const string")
 
     def test_vector(self):
-        self.assertEqual(PRIME_NUMBERS, (2, 3, 5, 7, 11, 13, 17))
-
-
+        self.assertEqual(PRIME_NUMBERS, [2, 3, 5, 7, 11, 13, 17])

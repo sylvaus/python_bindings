@@ -2667,12 +2667,11 @@ SWIGINTERN PyObject *SWIG_PyStaticMethod_New(PyObject *SWIGUNUSEDPARM(self), PyO
 #define SWIGTYPE_p_size_type swig_types[4]
 #define SWIGTYPE_p_std__allocatorT_int_t swig_types[5]
 #define SWIGTYPE_p_std__invalid_argument swig_types[6]
-#define SWIGTYPE_p_std__string swig_types[7]
-#define SWIGTYPE_p_std__vectorT_int_std__allocatorT_int_t_t swig_types[8]
-#define SWIGTYPE_p_swig__SwigPyIterator swig_types[9]
-#define SWIGTYPE_p_value_type swig_types[10]
-static swig_type_info *swig_types[12];
-static swig_module_info swig_module = {swig_types, 11, 0, 0, 0, 0};
+#define SWIGTYPE_p_std__vectorT_int_std__allocatorT_int_t_t swig_types[7]
+#define SWIGTYPE_p_swig__SwigPyIterator swig_types[8]
+#define SWIGTYPE_p_value_type swig_types[9]
+static swig_type_info *swig_types[11];
+static swig_module_info swig_module = {swig_types, 10, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -2829,6 +2828,9 @@ SWIG_FromCharPtr(const char *cptr)
 }
 
 
+#include <string>
+
+
 #include <iostream>
 
 #if PY_VERSION_HEX >= 0x03020000
@@ -2847,9 +2849,6 @@ SWIG_FromCharPtr(const char *cptr)
 #     define SWIG_STD_NOMODERN_STL
 #  endif
 #endif
-
-
-#include <string>
 
 
 #include <stddef.h>
@@ -4730,6 +4729,13 @@ SWIGINTERN std::vector< int >::iterator std_vector_Sl_int_Sg__erase__SWIG_0(std:
 SWIGINTERN std::vector< int >::iterator std_vector_Sl_int_Sg__erase__SWIG_1(std::vector< int > *self,std::vector< int >::iterator first,std::vector< int >::iterator last){ return self->erase(first, last); }
 SWIGINTERN std::vector< int >::iterator std_vector_Sl_int_Sg__insert__SWIG_0(std::vector< int > *self,std::vector< int >::iterator pos,std::vector< int >::value_type const &x){ return self->insert(pos, x); }
 SWIGINTERN void std_vector_Sl_int_Sg__insert__SWIG_1(std::vector< int > *self,std::vector< int >::iterator pos,std::vector< int >::size_type n,std::vector< int >::value_type const &x){ self->insert(pos, n, x); }
+
+SWIGINTERNINLINE PyObject *
+SWIG_From_std_string  (const std::string& s)
+{
+  return SWIG_FromCharPtrAndSize(s.data(), s.size());
+}
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -7363,6 +7369,17 @@ SWIGINTERN PyObject *IntVector_swiginit(PyObject *SWIGUNUSEDPARM(self), PyObject
   return SWIG_Python_InitShadowInstance(args);
 }
 
+SWIGINTERN PyObject *CONST_STRING_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!SWIG_Python_UnpackTuple(args, "swigconstant", 1, 1, &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "CONST_STRING",SWIG_From_std_string(static_cast< std::string >(CONST_STRING)));
+  return SWIG_Py_Void();
+}
+
+
 SWIGINTERN PyObject *PRIME_NUMBERS_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *module;
   PyObject *d;
@@ -7429,6 +7446,7 @@ static PyMethodDef SwigMethods[] = {
 	 { "delete_IntVector", _wrap_delete_IntVector, METH_O, NULL},
 	 { "IntVector_swigregister", IntVector_swigregister, METH_O, NULL},
 	 { "IntVector_swiginit", IntVector_swiginit, METH_VARARGS, NULL},
+	 { "CONST_STRING_swigconstant", CONST_STRING_swigconstant, METH_O, NULL},
 	 { "PRIME_NUMBERS_swigconstant", PRIME_NUMBERS_swigconstant, METH_O, NULL},
 	 { NULL, NULL, 0, NULL }
 };
@@ -7447,7 +7465,6 @@ static swig_type_info _swigt__p_p_PyObject = {"_p_p_PyObject", "PyObject **", 0,
 static swig_type_info _swigt__p_size_type = {"_p_size_type", "size_type *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__allocatorT_int_t = {"_p_std__allocatorT_int_t", "std::vector< int >::allocator_type *|std::allocator< int > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__invalid_argument = {"_p_std__invalid_argument", "std::invalid_argument *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_std__string = {"_p_std__string", "std::string *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_int_std__allocatorT_int_t_t = {"_p_std__vectorT_int_std__allocatorT_int_t_t", "std::vector< int,std::allocator< int > > *|std::vector< int > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_swig__SwigPyIterator = {"_p_swig__SwigPyIterator", "swig::SwigPyIterator *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_value_type = {"_p_value_type", "value_type *", 0, 0, (void*)0, 0};
@@ -7460,7 +7477,6 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_size_type,
   &_swigt__p_std__allocatorT_int_t,
   &_swigt__p_std__invalid_argument,
-  &_swigt__p_std__string,
   &_swigt__p_std__vectorT_int_std__allocatorT_int_t_t,
   &_swigt__p_swig__SwigPyIterator,
   &_swigt__p_value_type,
@@ -7473,7 +7489,6 @@ static swig_cast_info _swigc__p_p_PyObject[] = {  {&_swigt__p_p_PyObject, 0, 0, 
 static swig_cast_info _swigc__p_size_type[] = {  {&_swigt__p_size_type, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__allocatorT_int_t[] = {  {&_swigt__p_std__allocatorT_int_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__invalid_argument[] = {  {&_swigt__p_std__invalid_argument, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_std__string[] = {  {&_swigt__p_std__string, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_int_std__allocatorT_int_t_t[] = {  {&_swigt__p_std__vectorT_int_std__allocatorT_int_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_swig__SwigPyIterator[] = {  {&_swigt__p_swig__SwigPyIterator, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_value_type[] = {  {&_swigt__p_value_type, 0, 0, 0},{0, 0, 0, 0}};
@@ -7486,7 +7501,6 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_size_type,
   _swigc__p_std__allocatorT_int_t,
   _swigc__p_std__invalid_argument,
-  _swigc__p_std__string,
   _swigc__p_std__vectorT_int_std__allocatorT_int_t_t,
   _swigc__p_swig__SwigPyIterator,
   _swigc__p_value_type,
@@ -8225,7 +8239,6 @@ SWIG_init(void) {
   // thread safe initialization
   swig::container_owner_attribute();
   
-  SWIG_Python_SetConstant(d, "CONST_STRING",SWIG_NewPointerObj(SWIG_as_voidptr(&CONST_STRING),SWIGTYPE_p_std__string, 0 ));
 #if PY_VERSION_HEX >= 0x03000000
   return m;
 #else

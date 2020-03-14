@@ -9,6 +9,7 @@
 %constant const double PI = PI;
 %constant const char* CONST_RAW_STRING = CONST_RAW_STRING;
 
+%include "std_string.i"
 %include "std_vector.i"
 // Instantiate templates used by example
 namespace std {

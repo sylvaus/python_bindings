@@ -230,6 +230,8 @@ class IntVector(object):
 # Register IntVector in _constants:
 _constants.IntVector_swigregister(IntVector)
 
+
+_constants.CONST_STRING_swigconstant(_constants)
 CONST_STRING = _constants.CONST_STRING
 
 _constants.PRIME_NUMBERS_swigconstant(_constants)
